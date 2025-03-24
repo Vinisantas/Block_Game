@@ -1,0 +1,28 @@
+
+import sqlite3
+
+
+class DBProxy:
+    def __init__(self, db_name: str):
+        self.db_name = db_name
+        self.connection = sqlite3.connect(db_name)
+        self.connection.execute('''
+                            CREATE TABLE IF NOT EXISTS dados(
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                name TEXT NOT NULL,
+                                idade INTEGER NOT NULL,
+                                score INTEGER NOT NULL,
+                                date TEXT NOT NULL
+                                )
+                                ''')
+        
+    def save(self, score_dict=dict):
+        self.connection.execute('INSERT INTO dados (name, idade,  score, date) VALUES (:name, :idade, :score, :date)',  score_dict)
+        self.connection.commit()
+        
+    def retrieve_top5(self) -> list:
+        return self.connection.execute('SELECT * FROM dados ORDER BY score DESC  LIMIT 5').fetchall()
+    
+    
+    def close(self):
+        self.connection.close()
