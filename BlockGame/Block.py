@@ -1,9 +1,9 @@
 import pygame
 import random
 
-from BlockGame.Const import SCREEN_HEIGHT, SCREEN_WIDTH, SPECIAL_BALLOON_CHANCE
+from BlockGame.Const import SCREEN_HEIGHT, SCREEN_WIDTH, SPECIAL_BLOCKS_CHANCE
 
-class Balloon:
+class Block:
     def __init__(self):
         self.width = random.randint(30, 70)
         self.height = random.randint(40, 90)
@@ -19,8 +19,7 @@ class Balloon:
         self.rect.y = SCREEN_HEIGHT
         self.speed = random.uniform(1.0, 3.0)
         self.horizontal_speed = random.uniform(-1.0, 1.0)
-        self.special = random.randint(1, 100) <= SPECIAL_BALLOON_CHANCE
-        
+        self.special = random.randint(1, 100) <= SPECIAL_BLOCKS_CHANCE
 
     def update(self):
         self.rect.y -= self.speed
