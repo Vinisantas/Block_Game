@@ -3,10 +3,10 @@
 Block Game é um jogo simples desenvolvido em Python usando a biblioteca Pygame. O objetivo do jogo é clicar nos blocos que aparecem na tela para ganhar pontos e evitar que eles saiam da tela. O jogo também possui blocos especiais que concedem pontos extras e vidas adicionais.
 ![image](https://github.com/user-attachments/assets/22297a38-a1ea-4b22-8cf2-4be7f203f326)
 
-![Uploading Gravar_2025_05_01_14_26_52_391.gif…]()
 
 
 
+![Gravar_2025_05_01_14_26_52_391](https://github.com/user-attachments/assets/30b9212f-c5ce-4482-aca1-7885f786c807)
 
 
 ## Funcionalidades
